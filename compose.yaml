@@ -14,8 +14,6 @@ services:
     privileged: true
     networks:
       - jenkins
-    network_aliases:
-      - docker
     environment:
       DOCKER_TLS_CERTDIR: /certs
     volumes:
