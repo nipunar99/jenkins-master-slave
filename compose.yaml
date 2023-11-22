@@ -54,6 +54,12 @@ services:
     networks:
       - jenkins
     restart: "on-failure"
+
+  agent-maven:
+    build: ./agent-maven
+    container_name: agent-maven
+    
+    
     
 
   # client:
