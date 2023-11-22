@@ -55,20 +55,20 @@ services:
       - jenkins
     restart: "on-failure"
 
-  agent-maven:
+  agent-maven-slave-0528:
     build:
       context: ./agent-maven
-    image: agent-maven
-    container_name: agent-maven
+    image: agent-maven-slave-0528
+    container_name: agent-maven-slave-0528
     networks:
       - jenkins
     restart: "on-failure"
 
-  agent-gradle:
+  agent-gradle-slave-0528:
     build:
       context: ./agent-gradle
-    image: agent-gradle
-    container_name: agent-gralde
+    image: agent-gradle-slave-0528
+    container_name: agent-gralde-slave-0528
     networks:
       - jenkins
     restart: "on-failure"
