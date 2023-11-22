@@ -63,10 +63,10 @@ services:
       - jenkins
     restart: "on-failure"
 
-  agent-graalvm:
+  agent-gradle:
     build:
-      context: ./agent-graalvm
-    container_name: agent-gradl
+      context: ./agent-gradle
+    container_name: agent-gralde
     networks:
       - jenkins
     restart: "on-failure"
