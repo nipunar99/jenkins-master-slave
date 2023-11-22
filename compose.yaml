@@ -29,7 +29,8 @@ services:
       retries: 5
 
   master:
-    build: ./master
+    build:
+      context: ./master
     image: myjenkins-blueocean:2.426.1-1
     container_name: master_c
     environment:
@@ -55,16 +56,20 @@ services:
     restart: "on-failure"
 
   agent-maven:
-    build: ./agent-maven
+    build:
+      context: ./agent-maven
     container_name: agent-maven
     networks:
       - jenkins
+    restart: "on-failure"
 
   agent-graalvm:
-    build: ./agent-gradle
-    container_name: agent-gradle
+    build:
+      context: ./agent-graalvm
+    container_name: agent-gradl
     networks:
       - jenkins
+    restart: "on-failure"
 
 networks:
   jenkins:
