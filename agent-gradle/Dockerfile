@@ -7,10 +7,10 @@ RUN apt-get update && \
     apt-get install -qy openssh-server && \
     sed -i 's|session    required     pam_loginuid.so|session    optional     pam_loginuid.so|g' /etc/pam.d/sshd && \
     mkdir -p /var/run/sshd && \
-    # Install JDK 11
+    # Install JDK latest
     apt-get install -qy default-jdk && \
-    # Install maven
-    apt-get install -qy maven && \
+    # Install gradle
+    apt-get install -qy gradle && \
     # Cleanup old packages
     apt-get -qy autoremove && \
     # Add user jenkins to the image
