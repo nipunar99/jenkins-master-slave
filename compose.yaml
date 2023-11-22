@@ -58,6 +58,7 @@ services:
   agent-maven:
     build:
       context: ./agent-maven
+    image: agent-maven
     container_name: agent-maven
     networks:
       - jenkins
@@ -66,6 +67,7 @@ services:
   agent-gradle:
     build:
       context: ./agent-gradle
+    image: agent-gradle
     container_name: agent-gralde
     networks:
       - jenkins
