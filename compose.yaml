@@ -23,7 +23,7 @@ services:
       - "2376:2376"
     command: --storage-driver overlay2
     healthcheck:
-      test: [ "CMD", "ping", "-c", "1", "localhost:2376" ]
+      test: [ "CMD", "docker", "info" ]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -40,7 +40,7 @@ services:
       - "8080:8080"
       - "50000:50000"
     healthcheck:
-      test: [ "CMD", "ping", "-c", "1", "localhost:8080" ]
+      test: [ "CMD", "curl", "-f", "http://localhost:8080/login" ]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -57,10 +57,14 @@ services:
   agent-maven:
     build: ./agent-maven
     container_name: agent-maven
+    networks:
+      - jenkins
 
   agent-graalvm:
     build: ./agent-gradle
     container_name: agent-gradle
+    networks:
+      - jenkins
 
 networks:
   jenkins:
