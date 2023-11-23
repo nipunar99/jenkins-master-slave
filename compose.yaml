@@ -60,6 +60,8 @@ services:
       context: ./agent-maven
     image: agent-maven-slave-0528
     container_name: agent-maven-slave-0528
+    ports:
+      - "8085:8085"
     networks:
       - jenkins
     restart: "on-failure"
@@ -69,6 +71,8 @@ services:
       context: ./agent-gradle
     image: agent-gradle-slave-0528
     container_name: agent-gralde-slave-0528
+    ports:
+      - "8086:8086"
     networks:
       - jenkins
     restart: "on-failure"
