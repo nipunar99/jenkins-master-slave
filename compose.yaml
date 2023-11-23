@@ -80,7 +80,6 @@ services:
 networks:
   jenkins:
 
-
 volumes:
   jenkins-docker-certs:
   jenkins-data:
